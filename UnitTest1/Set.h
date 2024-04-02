@@ -1,51 +1,51 @@
 #ifndef SET_H
 #define SET_H
 
-#include <iostream>
+#include <iostream>//Андрій Прядко
 
-template <typename T>
-class Set {
-private:
-    T* elements;
-    int capacity;
-    int size;
+template <typename T>//Андрій Прядко
+class Set {//Андрій Прядко
+private://Андрій Прядко
+    T* elements;//Андрій Прядко
+    int capacity;//Андрій Прядко
+    int size;//Андрій Прядко
 
-public:
-    Set();
-    Set(const Set<T>& other);
-    ~Set();
-    Set<T>& operator=(const Set<T>& other);
+public://Андрій Прядко
+    Set();//Андрій Прядко
+    Set(const Set<T>& other);//Андрій Прядко
+    ~Set();//Андрій Прядко
+    Set<T>& operator=(const Set<T>& other);//Андрій Прядко
 
-    void add(const T& element);
-    void remove(const T& element);
-    void clear();
+    void add(const T& element); //Андрій Прядко
+    void remove(const T& element);//Андрій Прядко
+    void clear();//Андрій Прядко
 
-    bool contains(const T& element) const;
-    int getSize() const;
+    bool contains(const T& element) const;//Андрій Прядко
+    int getSize() const;//Андрій Прядко
 
-    Set<T> connectSet(const Set<T>& other) const;
-    Set<T> intersection(const Set<T>& other) const;
-    Set<T> difference(const Set<T>& other) const;
+    Set<T> connectSet(const Set<T>& other) const;//Андрій Прядко
+    Set<T> intersection(const Set<T>& other) const;//Андрій Прядко
+    Set<T> difference(const Set<T>& other) const;//Андрій Прядко
 
-    template <typename U>
-    friend std::ostream& operator<<(std::ostream& os, const Set<U>& set);
+    template <typename U>//Дударчук Марія
+    friend std::ostream& operator<<(std::ostream& os, const Set<U>& set);//Дударчук Марія
 };
 
-template <typename T>
+template <typename T>//Андрій Прядко
 Set<T>::Set() : elements(nullptr), capacity(0), size(0) {}
 
 template <typename T>
 Set<T>::Set(const Set<T>& other) : elements(nullptr), capacity(0), size(0) {
-    *this = other;
+    *this = other;//Дударчук Марія
 }
 
-template <typename T>
+template <typename T>//Дударчук Марія
 Set<T>::~Set() {
     delete[] elements;
 }
 
 template <typename T>
-Set<T>& Set<T>::operator=(const Set<T>& other) {
+Set<T>& Set<T>::operator=(const Set<T>& other) {//Дударчук Марія
     if (this != &other) {
         delete[] elements;
         capacity = other.capacity;
@@ -57,7 +57,7 @@ Set<T>& Set<T>::operator=(const Set<T>& other) {
 }
 
 template <typename T>
-void Set<T>::add(const T& element) {
+void Set<T>::add(const T& element) {//Дударчук Марія
     if (!contains(element)) {
         if (size >= capacity) {
             int newCapacity = (capacity == 0) ? 1 : capacity * 2;
@@ -72,7 +72,7 @@ void Set<T>::add(const T& element) {
 }
 
 template <typename T>
-void Set<T>::remove(const T& element) {
+void Set<T>::remove(const T& element) {//Дударчук Марія
     int index = -1;
     for (int i = 0; i < size; ++i) {
         if (elements[i] == element) {
@@ -87,14 +87,14 @@ void Set<T>::remove(const T& element) {
 }
 
 template <typename T>
-void Set<T>::clear() {
+void Set<T>::clear() {//Дударчук Марія
     delete[] elements;
     elements = nullptr;
     capacity = size = 0;
 }
 
 template <typename T>
-bool Set<T>::contains(const T& element) const {
+bool Set<T>::contains(const T& element) const {//Дударчук Марія
     for (int i = 0; i < size; ++i) {
         if (elements[i] == element) {
             return true;
@@ -104,12 +104,12 @@ bool Set<T>::contains(const T& element) const {
 }
 
 template <typename T>
-int Set<T>::getSize() const {
+int Set<T>::getSize() const {//Дударчук Марія
     return size;
 }
 
 template <typename T>
-Set<T> Set<T>::connectSet(const Set<T>& other) const {
+Set<T> Set<T>::connectSet(const Set<T>& other) const {//Дударчук Марія
     Set<T> result = *this;
     for (int i = 0; i < other.size; ++i) {
         result.add(other.elements[i]);
@@ -118,7 +118,7 @@ Set<T> Set<T>::connectSet(const Set<T>& other) const {
 }
 
 template <typename T>
-Set<T> Set<T>::intersection(const Set<T>& other) const {
+Set<T> Set<T>::intersection(const Set<T>& other) const {//Дударчук Марія
     Set<T> result;
     for (int i = 0; i < size; ++i) {
         if (other.contains(elements[i])) {
@@ -129,7 +129,7 @@ Set<T> Set<T>::intersection(const Set<T>& other) const {
 }
 
 template <typename T>
-Set<T> Set<T>::difference(const Set<T>& other) const {
+Set<T> Set<T>::difference(const Set<T>& other) const {//Дударчук Марія
     Set<T> result = *this;
     for (int i = 0; i < other.size; ++i) {
         result.remove(other.elements[i]);
@@ -138,7 +138,7 @@ Set<T> Set<T>::difference(const Set<T>& other) const {
 }
 
 template <typename U>
-std::ostream& operator<<(std::ostream& os, const Set<U>& set) {
+std::ostream& operator<<(std::ostream& os, const Set<U>& set) {//Дударчук Марія
     os << "{";
     for (int i = 0; i < set.size; ++i) {
         os << set.elements[i];
