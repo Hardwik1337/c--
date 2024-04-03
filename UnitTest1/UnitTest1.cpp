@@ -49,6 +49,41 @@ namespace SetTests
             Assert::IsTrue(connected.contains(1));
             Assert::IsTrue(connected.contains(2));
         }
+        TEST_METHOD(Test_Difference)//Тоніццо Сімоне
+        {
+            Set<int> e;
+            e.add(1);
+            e.add(2);
+
+            Set<int> e2;
+            e2.add(2);
+            e2.add(3);
+
+            Set<int> difference = e.difference(e2);
+            Assert::AreEqual(1, difference.getSize());
+            Assert::IsTrue(difference.contains(1));
+        }
+        TEST_METHOD(TestIntersection)//Тоніццо Сімоне
+        {
+            Set<int> f;
+            f.add(1);
+            f.add(2);
+            Set<int> f2;
+            f2.add(2);
+            f2.add(3);
+
+            Set<int> intersected = f.intersection(f2);
+
+
+            Assert::AreEqual(1, intersected.getSize());
+            Assert::IsTrue(intersected.contains(2));
+        }
+        TEST_METHOD(Test_Constructor)//Тоніццо Сімоне
+        {
+            Set<int> g;
+
+            Assert::AreEqual(0, g.getSize());
+        }
 
       
     };
