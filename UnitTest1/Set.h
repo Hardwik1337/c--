@@ -20,7 +20,7 @@ public://Андрій Прядко
     void remove(const T& element);//Андрій Прядко
     void clear();//Андрій Прядко
 
-    bool contains(const T& element) const;//Андрій Прядко
+    bool contains(const T& element) const;//Тоніццо Сімоне
     int getSize() const;//Андрій Прядко
 
     Set<T> connectSet(const Set<T>& other) const;//Андрій Прядко
@@ -94,7 +94,7 @@ void Set<T>::clear() {//Дударчук Марія
 }
 
 template <typename T>
-bool Set<T>::contains(const T& element) const {//Дударчук Марія
+bool Set<T>::contains(const T& element) const {//Тоніццо Сімоне
     for (int i = 0; i < size; ++i) {
         if (elements[i] == element) {
             return true;
