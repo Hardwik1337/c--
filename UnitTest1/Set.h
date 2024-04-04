@@ -23,9 +23,9 @@ public://Андрій Прядко
     bool contains(const T& element) const;//Тоніццо Сімоне
     int getSize() const;//Андрій Прядко
 
-    Set<T> connectSet(const Set<T>& other) const;//Андрій Прядко
-    Set<T> intersection(const Set<T>& other) const;//Андрій Прядко
-    Set<T> difference(const Set<T>& other) const;//Андрій Прядко
+    Set<T> connectSet(const Set<T>& other) const;//Сирота Денис
+    Set<T> intersection(const Set<T>& other) const;//Сирота Денис
+    Set<T> difference(const Set<T>& other) const;//Сирота Денис
 
     template <typename U>//Дударчук Марія
     friend std::ostream& operator<<(std::ostream& os, const Set<U>& set);//Дударчук Марія
@@ -104,7 +104,7 @@ bool Set<T>::contains(const T& element) const {//Тоніццо Сімоне
 }
 
 template <typename T>
-int Set<T>::getSize() const {//Дударчук Марія
+int Set<T>::getSize() const {//Сирота Денис
     return size;
 }
 
@@ -118,7 +118,7 @@ Set<T> Set<T>::connectSet(const Set<T>& other) const {//Дударчук Марія
 }
 
 template <typename T>
-Set<T> Set<T>::intersection(const Set<T>& other) const {//Дударчук Марія
+Set<T> Set<T>::intersection(const Set<T>& other) const {//Сирота Денис
     Set<T> result;
     for (int i = 0; i < size; ++i) {
         if (other.contains(elements[i])) {
