@@ -28,7 +28,7 @@ public://Андрій Прядко
     Set<T> difference(const Set<T>& other) const;//Сирота Денис
 
     template <typename U>//Дударчук Марія
-    friend std::ostream& operator<<(std::ostream& os, const Set<U>& set);//Дударчук Марія
+    friend std::ostream& operator<<(std::ostream& os, const Set<U>& set);
 };
 
 template <typename T>//Андрій Прядко
@@ -109,7 +109,7 @@ int Set<T>::getSize() const {//Сирота Денис
 }
 
 template <typename T>
-Set<T> Set<T>::connectSet(const Set<T>& other) const {//Дударчук Марія
+Set<T> Set<T>::connectSet(const Set<T>& other) const {//Сирота Денис
     Set<T> result = *this;
     for (int i = 0; i < other.size; ++i) {
         result.add(other.elements[i]);
@@ -129,7 +129,7 @@ Set<T> Set<T>::intersection(const Set<T>& other) const {//Сирота Денис
 }
 
 template <typename T>
-Set<T> Set<T>::difference(const Set<T>& other) const {//Дударчук Марія
+Set<T> Set<T>::difference(const Set<T>& other) const {//Сирота Денис
     Set<T> result = *this;
     for (int i = 0; i < other.size; ++i) {
         result.remove(other.elements[i]);
