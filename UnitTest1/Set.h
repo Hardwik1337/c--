@@ -1,5 +1,5 @@
-#ifndef SET_H
-#define SET_H
+
+#pragma once
 
 #include <iostream>//Андрій Прядко
 
@@ -150,4 +150,7 @@ std::ostream& operator<<(std::ostream& os, const Set<U>& set) {//Дударчук Марія
     return os;
 }
 
-#endif
+
+
+
+
